@@ -1,0 +1,67 @@
+#infoBox,#errorBox,#loadingBox{
+    display: none;
+    color:white;
+    margin: 10px auto;
+    padding: 5px;
+    border-radius: 5px;
+    font-family: FontAwesome;
+    width: 50%;
+    text-align: center;
+}
+
+.textarea{
+    display: inline-block;
+}
+
+#infoBox{
+    background: #393;
+}
+
+#loadingBox{
+    background: #7CB3E9;
+}
+
+#errorBox{
+    background: #F50;
+}
+
+main > section{
+    display:block;
+}
+
+section h1{
+    margin: 10px 0px;
+    font-size: 1.2em;
+}
+
+#menu{
+    font-family: Arial;
+    background-image: url("http://opusdesign.us/wp-content/uploads/2015/02/donuts.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-top:10px;
+    height: 300px;
+    text-align: center;
+}
+
+#menu a{
+    display:inline-block;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-color: black;
+    border-radius: 5px;
+}
+
+#menu a:hover{
+    color: blue;
+}
+
+footer{
+    text-align: center;
+    border-radius: 3px;
+    font-size: 0.8em;
+    padding: 5px 10px;
+    background: #DDD;
+}
+
+

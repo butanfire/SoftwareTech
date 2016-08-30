@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Food blog</title>
+    <script type = "text/javascript" src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+    <script type = "text/javascript" src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles/blogStyle.css" />
+    <link rel="stylesheet" type="text/css" href="styles/socialIcons.css" />
+    <link rel="stylesheet" type="text/css" href="styles/font-awesome.css" />
+    <script type = "text/javascript"  src="scripts/blog.js"></script>
+</head>
+<body>
+<section id="loadingBox">Loading...</section>
+<section id="infoBox" onclick="$(this).hide()">Loading...>Info</section>
+<section id="errorBox" onclick="$(this).hide()">Loading...>Error</section>
+    <header id="menu">
+        <a href="#" id="linkHome">Home</a>
+        <a href="#" id="linkLogin">Login</a>
+        <a href="#" id="linkLogout">Logout</a>
+        <a href="#" id="linkRegister">Register</a>
+        <a href="#" id="linkRecipes">Recipes</a>
+        <a href="#" id="linkCreateRecipes">Create Recipe</a>
+    </header>
+
+    <main>
+        <section id="viewHome">
+        <h1>Welcome</h1>
+        Welcome to our Food Blog.
+        </section>
+        <section id="viewLogin">
+        <h1>Please login</h1>
+        <form id="formLogin">
+            <div>Username:</div>
+            <div><input type="text" id="loginUser" required/></div>
+            <div>Password:</div>
+            <div><input type="password" id="loginPass" required/></div>
+            <div><input type="submit" value="Login" id="buttonLogin"/></div>
+        </form>
+        </section>
+        <section id="viewRegister">
+        <h1>Please register</h1>
+        <form id="formRegister">
+            <div>Username:</div>
+            <div><input type="text" id="registerUser" required/></div>
+            <div>Password:</div>
+            <div><input type="password" id="registerPass" required/></div>
+            <div><input type="submit" value="Register" id="buttonRegister"/></div>
+        </form>
+        </section>
+        <section id="viewRecipes">
+            <h1>All the recipes :</h1>
+            <button type="button" id="buttonReadRecipes">Load Recepies</button>
+
+        </section>
+
+        <section id="viewCreateRecipes">
+            <h1>Please enter the recipe name and steps</h1>
+            <form id="formRecipe">
+                <div>Recipe name:</div>
+                <div><input type="text" id="recipeName" required/></div>
+            </form>
+            <br>
+            <form method="post">
+            <textarea>Please fill out the recipe steps here.</textarea>
+            <button type="button" id="buttonCreateRecipe">Save Recipe</button>
+            </form>
+            <br>
+        </section>
+
+    </main>
+    <footer>
+
+        <ul class="social-network social-circle">
+                    <li><a href="https://www.facebook.com/SoftwareUniversity" class="icoFacebook" title="Facebook"><i class="fa fa-facebook-official"></i></a></li>
+                    <li><a href="https://twitter.com/softunibg" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="https://plus.google.com/+SoftuniBg" class="icoGoogle" title="Google +"><i class="fa fa-google-plus"></i></a></li>
+
+            <li> <p>FoodBlog copyright</p>            //facebook , twitter , social media accounts          </li>
+            </ul>
+    </footer>
+</body>
+</html>
+
+///check http://www.melnicite.bg/magazin/ticket for Header + logo structure
