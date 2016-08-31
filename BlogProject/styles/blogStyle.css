@@ -1,11 +1,9 @@
 #infoBox{
     background: #393;
 }
-
 #loadingBox{
     background: #7CB3E9;
 }
-
 #errorBox{
     background: #F50;
 
@@ -96,12 +94,12 @@ section h1{
     transition: background 0.7s ease, padding 0.5s linear;
 }
 
-#loginPass,#loginUser,#registerUser,#registerPass,#recipeName{
+#loginPass,#loginUser,#registerUser,#registerPass,#recipeName,#commentText,#commentAuthor{
     margin: 10px;
     padding: 5px;
 }
 
-#buttonRegister,#buttonLogin,#buttonReadRecipes,#buttonSaveRecipe,.addCommentButton{
+#buttonRegister,#buttonLogin,#buttonReadRecipes,#buttonSaveRecipe,.addCommentButton, .formComments {
     border-radius:8px;
     color: black;
     background-color: white;
@@ -118,7 +116,7 @@ section h1{
     padding: 8px 4px 8px 4px;
 }
 
-#buttonRegister:hover,#buttonCreateRecipe:hover,#buttonLogin:hover,#buttonReadRecipes:hover,#buttonSaveRecipe:hover,.addCommentButton:hover{
+#buttonRegister:hover,#buttonCreateRecipe:hover,#buttonLogin:hover,#buttonReadRecipes:hover,#buttonSaveRecipe:hover,.addCommentButton:hover,.formComments:hover{
     color: white;
     background-color:#e4741f;
     transition: background 0.7s ease, padding 0.5s linear;
