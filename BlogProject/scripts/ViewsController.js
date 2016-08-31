@@ -16,7 +16,7 @@ $(function(){
     $("#formRegister").submit(function(e){e.preventDefault(); register();});
     $("#formRecipe").submit(function(e){e.preventDefault(); saveRecipe()});
     $("#buttonReadRecipes").click(readAllRecipes);
-    if(localStorage.getItem('user') != undefined) {
+    if(localStorage.getItem('user') != undefined) { 
         $("#usernameBox").text("Logged in as : " + localStorage.getItem('user')).show();
     }
     $(document)

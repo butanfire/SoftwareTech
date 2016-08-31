@@ -8,20 +8,29 @@
     background: #F50;
 
 }
-#infoBox,#errorBox,#loadingBox{
+#infoBox,#errorBox,#loadingBox,#usernameBox{
     display: none;
     color:white;
     margin: 10px auto;
     padding: 5px;
     border-radius: 5px;
-    font-family: FontAwesome;
+    font-family: Oswald,sans-serif;
     width: 50%;
     text-align: center;
+}
+
+#usernameBox{
+    display: inline;
+    color:black;
 }
 
 body{
     font-family: Oswald, sans-serif;
     font-size: 16px;
+}
+
+div{
+    font-size: 20px;
 }
 
 .textarea{
@@ -76,6 +85,7 @@ section h1{
 }
 
 #menu a{
+    color: black;
     display: inline-block;
     text-decoration: none;
     padding: 10px 10px;
@@ -89,7 +99,7 @@ section h1{
 
 #menu a:hover{
     color: white;
-    background-color:#e4741f;
+    background-color:#FFE85C;
     font-weight: 500;
     transition: background 0.7s ease, padding 0.5s linear;
 }
@@ -99,11 +109,11 @@ section h1{
     padding: 5px;
 }
 
-#buttonRegister,#buttonLogin,#buttonReadRecipes,#buttonSaveRecipe,.addCommentButton, .formComments {
+#buttonLogin,#buttonReadRecipes,#buttonSaveRecipe,.addCommentButton,.formComments,.formRegister, input {
     border-radius:8px;
     color: black;
+    font-size: 0.8em;
     background-color: white;
-    font-size: 16px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -116,10 +126,14 @@ section h1{
     padding: 8px 4px 8px 4px;
 }
 
-#buttonRegister:hover,#buttonCreateRecipe:hover,#buttonLogin:hover,#buttonReadRecipes:hover,#buttonSaveRecipe:hover,.addCommentButton:hover,.formComments:hover{
+#buttonLogin,#buttonReadRecipes,#buttonSaveRecipe,input{
+    font-size: 1.2em;
+}
+
+#buttonRegister:hover,#buttonCreateRecipe:hover,#buttonLogin:hover,#buttonReadRecipes:hover,#buttonSaveRecipe:hover,.addCommentButton:hover,.formComments:hover, input:hover{
     color: white;
-    background-color:#e4741f;
-    transition: background 0.7s ease, padding 0.5s linear;
+    background-color:#3D8F8F;
+    transition: background 0.5s ease, padding 0.5s linear;
 }
 
 #linkRegister2{
@@ -130,20 +144,20 @@ section h1{
 }
 
 table th{
-    background: #DDD;
+    background: #9A4600;
     padding: 10px;
 }
 
 table td{
     padding: 5px 10px;
-    background: #EEE;
+    background: #D3BEAC;
 }
 
 footer{
     width: 82%;
     text-align: center;
     font-size: 0.8em;
-    background: #c06000;
+    background: #FF271C;
     color: white;
     border-radius: 1em;
     padding: 1em;

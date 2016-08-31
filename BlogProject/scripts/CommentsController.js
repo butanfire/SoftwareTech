@@ -1,7 +1,6 @@
 /**
  * Created by valchevv on 8/30/2016.
  */
-var recipeCommented = '';
 
 function createRecipeComment(recipeData, commentText, commentAuthor) {
     let commentsURL = kinveyServiceBaseURL + "appdata/" + kinveyAppID + "/Comments";
@@ -10,65 +9,53 @@ function createRecipeComment(recipeData, commentText, commentAuthor) {
     {
         commentText: commentText,
         commentAuthor: commentAuthor,
-        commentID:    {
-        _type: "KinveyRef",
-        _id: recipeData._id,
-         _collection: "recipe"
+        commentID: {
+            _type: "KinveyRef",
+            _id: recipeData._id,
+            _collection: "recipe"
+        }
     }
-}
 
     $.ajax({
         method: "POST",
-        url:  commentsURL,
+        url: commentsURL,
         headers: kinveyAuthHeaders,
         data: data,
         success: addRecipeCommentSuccess,
         error: showErrorMsg
     });
 
-    function addRecipeCommentSuccess(){
+    function addRecipeCommentSuccess() {
         showInfoMsg("Recipe comment added");
     }
 }
 
-function addComment(link){
+function addComment(link) {
     let author = $("#commentAuthor").val();
     let text = $("#commentText").val();
-    createRecipeComment(recipeCommented,text,author);
+    createRecipeComment(recipeCommented, text, author);
     removeCommentFields(link);
 } //a function for sending the data for the comments and removing the comment fields
 
-function getRecipeComments(){
-        let commentsURL = kinveyServiceBaseURL + "appdata/" + kinveyAppID + "/Comments/?resolve_depth=1";
+function getRecipeComments() {
+    let commentsURL = kinveyServiceBaseURL + "appdata/" + kinveyAppID + "/Comments/?resolve=commentID";
 
-        $.ajax({
-            method: "GET",
-            url: commentsURL,
-            headers: kinveyAuthHeaders,
-            success: getRecipeCommentSuccess,
-            error: showErrorMsg
-        });
+    $.ajax({
+        method: "GET",
+        url: commentsURL,
+        headers: kinveyAuthHeaders,
+        success: getRecipeCommentSuccess,
+        error: showErrorMsg
+    });
 
 
-    function getRecipeCommentSuccess(commentsData){
+    function getRecipeCommentSuccess(commentsData) {
         showInfoMsg("Recipe comments loaded");
+        commentsComing = commentsData;
+    }
+}
 
-        for(let comment of commentsData){
-            if(comment.commentID._id == recipeCommented._id){
-                outputStructure.append($('<tr>').append(
-                        '<th>Author</th>',
-                        '<th>Comment</th>'));
-                let commentAuthor = comment.commentAuthor;
-                let commentText = comment.commentText;
-                outputStructure.append($('<tr>').append(
-                    $('<td>').text(commentAuthor),
-                    $('<td>').text(commentText)));
-            }
-        }
-        }
-} //
-
-function showAddComment(link){ //adding the AddComent and form for the comments
+function showAddComment(link) { //adding the AddComent and form for the comments
     let row = $(link).parent();
     row.append($("<form class='credentials' class='formComments'>").append("<div>Author:</div>")
         .append("<div><input type='text' id='commentAuthor'/></div>")
@@ -79,9 +66,9 @@ function showAddComment(link){ //adding the AddComent and form for the comments
         .append("</form>"));
 }
 
-function removeCommentFields(link){ //removing the comment fields after pressing cancel
+function removeCommentFields(link) { //removing the comment fields after pressing cancel
     let row = $(link).parent().parent();
-    row.fadeOut(function() {
+    row.fadeOut(function () {
         row.remove();
     })
 }
