@@ -1,7 +1,7 @@
 ul.social-network {
     list-style: none;
     display: inline;
-    margin-left:0 !important;
+    margin-left:0;
     padding: 0;
 }
 ul.social-network li {
@@ -9,8 +9,9 @@ ul.social-network li {
     margin: 0 5px;
 }
 
-
-/* footer social icons */
+a.socialIcon:hover, .socialHoverClass {
+    color:#44BCDD;
+}
 
 .social-network a.icoFacebook:hover {
     background-color:#3B5998;
@@ -24,9 +25,6 @@ ul.social-network li {
 .social-network a.icoFacebook:hover i, .social-network a.icoTwitter:hover i,
 .social-network a.icoGoogle:hover i{
     color:#fff;
-}
-a.socialIcon:hover, .socialHoverClass {
-    color:#44BCDD;
 }
 
 .social-circle li a {

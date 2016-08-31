@@ -1,3 +1,15 @@
+#infoBox{
+    background: #393;
+}
+
+#loadingBox{
+    background: #7CB3E9;
+}
+
+#errorBox{
+    background: #F50;
+
+}
 #infoBox,#errorBox,#loadingBox{
     display: none;
     color:white;
@@ -9,24 +21,25 @@
     text-align: center;
 }
 
+body{
+    font-family: Oswald, sans-serif;
+    font-size: 16px;
+}
+
 .textarea{
     display: inline-block;
 }
 
-#infoBox{
-    background: #393;
-}
-
-#loadingBox{
-    background: #7CB3E9;
-}
-
-#errorBox{
-    background: #F50;
+.mainContent{
+    background: url("../images/header-new2.png") no-repeat center;
+    margin-top:15px;
+    width: 100%;
+    height: 250px;
 }
 
 main > section{
     display:block;
+    margin-left: 8.5%;
 }
 
 section h1{
@@ -34,34 +47,107 @@ section h1{
     font-size: 1.2em;
 }
 
+.header-section-first{
+    display: inline-block;
+    width: 90px;
+    height: 75px;
+    margin-left: 8%;
+    float: left;
+    background: url("../images/logo-mini.png") no-repeat;
+}
+.header-section-second{
+    display:inline-block;
+    position: static;
+}
+.header-section-third{
+    display: inline-block;
+    float: right;
+    margin-top: 10px;
+}
+
+#formRecipe > div, .formComments > div, .credentials > div{
+    display: table-cell;
+    vertical-align: middle;
+    height: 2em;
+}
+
 #menu{
-    font-family: Arial;
-    background-image: url("http://opusdesign.us/wp-content/uploads/2015/02/donuts.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-    margin-top:10px;
-    height: 300px;
     text-align: center;
+    padding-top: 5px;
+    padding-right: 10px;
 }
 
 #menu a{
-    display:inline-block;
+    display: inline-block;
     text-decoration: none;
-    padding: 5px 10px;
-    border-color: black;
+    padding: 10px 10px;
+    margin: 0px 20px 0px 20px;
     border-radius: 5px;
+    transition-property: font-weight;
+    transition-duration: 0.1s;
+    transition-timing-function: linear;
+    transition-delay: 0.1s;
 }
 
 #menu a:hover{
+    color: white;
+    background-color:#e4741f;
+    font-weight: 500;
+    transition: background 0.7s ease, padding 0.5s linear;
+}
+
+#loginPass,#loginUser,#registerUser,#registerPass,#recipeName{
+    margin: 10px;
+    padding: 5px;
+}
+
+#buttonRegister,#buttonLogin,#buttonReadRecipes,#buttonSaveRecipe,.addCommentButton{
+    border-radius:8px;
+    color: black;
+    background-color: white;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    transition-property: font-weight;
+    transition-duration: 0.1s;
+    transition-timing-function: linear;
+    transition-delay: 0.1s;
+    padding: 8px 4px 8px 4px;
+}
+
+#buttonRegister:hover,#buttonCreateRecipe:hover,#buttonLogin:hover,#buttonReadRecipes:hover,#buttonSaveRecipe:hover,.addCommentButton:hover{
+    color: white;
+    background-color:#e4741f;
+    transition: background 0.7s ease, padding 0.5s linear;
+}
+
+#linkRegister2{
+    display:inline-block;
+    text-decoration: none;
+    padding: 5px 10px;
     color: blue;
 }
 
-footer{
-    text-align: center;
-    border-radius: 3px;
-    font-size: 0.8em;
-    padding: 5px 10px;
+table th{
     background: #DDD;
+    padding: 10px;
 }
 
+table td{
+    padding: 5px 10px;
+    background: #EEE;
+}
 
+footer{
+    width: 82%;
+    text-align: center;
+    font-size: 0.8em;
+    background: #c06000;
+    color: white;
+    border-radius: 1em;
+    padding: 1em;
+    margin-left: 8.3%;
+}
