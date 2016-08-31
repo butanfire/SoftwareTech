@@ -1,6 +1,7 @@
 /**
  * Created by valchevv on 8/30/2016.
  */
+var outputStructure = '';
 const kinveyAppID ="kid_Sk0fbFiu";
 const kinveyAppSecret = "8dd61a558f744c04b4b1080e716b04bc";
 const kinveyServiceBaseURL ="https://baas.kinvey.com/";
@@ -70,7 +71,7 @@ function readAllRecipes() {
         else
         {
             $("#viewRecipes").text(' ').append("<button type='button' id='buttonReadRecipes' onclick='readAllRecipes()'>Load Recepies</button>");
-            let outputStructure = $('<table>')
+            outputStructure = $('<table>')
                 .append($('<tr>').append(
                     '<th>Recipe name</th>',
                     '<th>Author</th>',
@@ -78,14 +79,16 @@ function readAllRecipes() {
                 );
 
             for (let recipe of recipesData) {
+                recipeCommented = recipe;
+
                 outputStructure.append($('<tr>').append(
                     $('<td>').text(recipe.recipeName),
                     $('<td>').text(recipe.author),
-                    $('<td>').append(recipe.recipeText)),
-                    $('<tr>').append($('<td colspan="3">').append(("<div><a href='#' class='addCommentButton' onclick='showAddComment(this)'>Add Comment</a></div>")))
-                );
+                    $('<td>').append(recipe.recipeText)));
+
+                  outputStructure.append($('<tr>').append($('<td colspan="3">').append(("<div><a href='#' class='addCommentButton' onclick='showAddComment(this)'>Add Comment</a></div>"))))
                 getRecipeComments();
-            };
+            }
 
             $("#viewRecipes").append(outputStructure);
         }

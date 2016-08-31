@@ -1,19 +1,27 @@
 /**
  * Created by valchevv on 8/30/2016.
  */
-function createRecipeComment(recipeData, commentText, commentAuthor){
-    let recipeURL = kinveyServiceBaseURL + "appdata/" + kinveyAppID + "/recipe";
+var recipeCommented = '';
 
-    if(!recipeData.commentIDs){
-        recipeData.commentIDs = [];
+function createRecipeComment(recipeData, commentText, commentAuthor) {
+    let commentsURL = kinveyServiceBaseURL + "appdata/" + kinveyAppID + "/Comments";
+
+    let data =
+    {
+        commentText: commentText,
+        commentAuthor: commentAuthor,
+        commentID:    {
+        _type: "KinveyRef",
+        _id: recipeData._id,
+         _collection: "recipe"
     }
-    recipeData.commentIDs.push({text: commentText, author: commentAuthor});
+}
 
     $.ajax({
-        method: "PUT",
-        url:  recipeURL + '/' + recipeData._id,
+        method: "POST",
+        url:  commentsURL,
         headers: kinveyAuthHeaders,
-        data: JSON.stringify(recipeData),
+        data: data,
         success: addRecipeCommentSuccess,
         error: showErrorMsg
     });
@@ -23,11 +31,11 @@ function createRecipeComment(recipeData, commentText, commentAuthor){
     }
 }
 
-function addComment(recipe){
+function addComment(link){
     let author = $("#commentAuthor").val();
-    let text = $("#commentAuthor").val();
-    
-    createRecipeComment(recipe,text,author);
+    let text = $("#commentText").val();
+    createRecipeComment(recipeCommented,text,author);
+    removeCommentFields(link);
 }
 
 function getRecipeComments(){
@@ -44,40 +52,34 @@ function getRecipeComments(){
 
     function getRecipeCommentSuccess(commentsData){
         showInfoMsg("Recipe comments loaded");
-        //alert(commentsData[0].commentID._obj.recipeName);
-        let outputStructure = $('<table>')
-            .append($('<tr>').append(
-                '<th>Author</th>',
-                '<th>Comment</th>')
-            );
 
-            for (let comment of commentsData) {
-                {
-                    let commentAuthor = comment.author;
-                    let commentText = comment.commentText;
-                    outputStructure
-                        .append("<tr colspan='3'></tr>")
-                        .append("<div></div>").text(commentAuthor)
-                        .append("<div></div>").text(commentText);
-                }
+        for(let comment of commentsData){
+            if(comment.commentID._id == recipeCommented._id){
+                outputStructure.append($('<tr>').append(
+                        '<th>Author</th>',
+                        '<th>Comment</th>'));
+                let commentAuthor = comment.commentAuthor;
+                let commentText = comment.commentText;
+                outputStructure.append($('<tr>').append(
+                    $('<td>').text(commentAuthor),
+                    $('<td>').text(commentText)));
             }
-
-        $("#viewRecipes").append(outputStructure);
+        }
         }
 }
 
-function showAddComment(link,recipe){
+function showAddComment(link){
     let row = $(link).parent();
     row.append($("<form class='credentials' class='formComments'>").append("<div>Author:</div>")
         .append("<div><input type='text' id='commentAuthor'/></div>")
         .append("<div>Comment:</div>")
         .append("<div><input type='text' id='commentText'/></div>")
-        .append("<div><input type='submit' value='Add Comment' onclick='addComment(recipe)'/></div>")
-        .append("<div><input type='submit' value='Cancel' onclick='removeRow(this)'/></div>")
+        .append("<div><input type='submit' value='Add Comment' onclick='addComment(this)'/></div>")
+        .append("<div><input type='submit' value='Cancel' onclick='removeCommentFields(this)'/></div>")
         .append("</form>"));
 }
 
-function removeRow(link){
+function removeCommentFields(link){
     let row = $(link).parent().parent();
     row.fadeOut(function() {
         row.remove();
