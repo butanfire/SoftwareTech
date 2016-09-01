@@ -58,9 +58,9 @@ function getRecipeComments() {
 function showAddComment(link) { //adding the AddComent and form for the comments
     let row = $(link).parent();
     row.append($("<form class='credentials' class='formComments'>").append("<div>Author:</div>")
-        .append("<div><input type='text' id='commentAuthor'/></div>")
+        .append("<div><input type='text' class = 'dataEntry'  id='commentAuthor'/></div>")
         .append("<div>Comment:</div>")
-        .append("<div><input type='text' id='commentText'/></div>")
+        .append("<div><input type='text' class = 'dataEntry' id='commentText'/></div>")
         .append("<div><input type='submit' class='formComments' value='Add Comment' onclick='addComment(this)'/></div>")
         .append("<div><input type='submit' class='formComments' value='Cancel' onclick='removeCommentFields(this)'/></div>")
         .append("</form>"));

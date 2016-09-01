@@ -80,7 +80,7 @@ section h1 {
 #formRecipe > div, .formComments > div, .credentials > div {
     display: table-cell;
     vertical-align: middle;
-    height: 2em;
+    height: 1em;
 }
 
 #menu {
@@ -109,12 +109,12 @@ section h1 {
     transition: background 0.7s ease, padding 0.5s linear;
 }
 
-#loginPass, #loginUser, #registerUser, #registerPass, #recipeName, #commentText, #commentAuthor {
+.dataEntry {
     margin: 10px;
     padding: 5px;
 }
 
-#buttonLogin, #buttonReadRecipes, #buttonSaveRecipe, .addCommentButton, .formComments, .formRegister, input {
+#buttonReadRecipes, #buttonSaveRecipe, .addCommentButton, .formComments,input {
     border-radius: 8px;
     color: black;
     font-size: 0.8em;
@@ -131,11 +131,12 @@ section h1 {
     padding: 8px 4px 8px 4px;
 }
 
-#buttonLogin, #buttonReadRecipes, #buttonSaveRecipe, input {
-    font-size: 1.2em;
+
+#buttonReadRecipes, #buttonSaveRecipe, input {
+    font-size: 1em;
 }
 
-#buttonRegister:hover, #buttonCreateRecipe:hover, #buttonLogin:hover, #buttonReadRecipes:hover, #buttonSaveRecipe:hover, .addCommentButton:hover, .formComments:hover, input:hover {
+#buttonReadRecipes:hover, #buttonSaveRecipe:hover, .addCommentButton:hover, .formComments:hover, input:hover {
     color: white;
     background-color: #3D8F8F;
     transition: background 0.5s ease, padding 0.5s linear;
