@@ -1,49 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script type = "text/javascript" src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
     <meta charset="UTF-8">
     <title>Food blog</title>
-    <script type = "text/javascript" src="//cdn.tinymce.com/4/tinymce.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="styles/blogStyle.css" />
-    <link rel="stylesheet" type="text/css" href="styles/socialIcons.css" />
-    <link rel="stylesheet" type="text/css" href="styles/font-awesome.css" />
-    <script type = "text/javascript"  src="scripts/ViewsController.js"></script>
-    <script type = "text/javascript"  src="scripts/LoginController.js"></script>
-    <script type = "text/javascript"  src="scripts/RecipeController.js"></script>
-    <script type = "text/javascript"  src="scripts/CommentsController.js"></script>
+    <script type="text/javascript" src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles/blogStyle.css"/>
+    <link rel="stylesheet" type="text/css" href="styles/socialIcons.css"/>
+    <link rel="stylesheet" type="text/css" href="styles/font-awesome.css"/>
+    <script type="text/javascript" src="scripts/ViewsController.js"></script>
+    <script type="text/javascript" src="scripts/LoginController.js"></script>
+    <script type="text/javascript" src="scripts/RecipeController.js"></script>
+    <script type="text/javascript" src="scripts/CommentsController.js"></script>
 </head>
 <body>
 <section id="loadingBox"></section>
 <section id="infoBox"></section>
 <section id="errorBox"></section>
-    <header id="menu">
-        <div class="wrapper">
-            <div class="header-section-first">
-                <div id="logo"></div>
-            </div>
-            <div class="header-section-second">
-                <a href="#" id="linkHome">Home</a>
-                <a href="#" id="linkRegister">Register</a>
-                <a href="#" id="linkRecipes">Recipes</a>
-                <a href="#" id="linkCreateRecipes">Create Recipe</a>
-                <a href="#" id="linkLogin">Login</a>
-                <a href="#" id="linkLogout">Logout</a>
-            </div>
-            <div class="header-section-third">
-                <span id="usernameBox"></span>
-            </div>
+<header id="menu">
+    <div class="wrapper">
+        <div class="header-section-first">
+            <div id="logo"></div>
         </div>
-    </header>
-    <main>
-        <div class="mainContent"></div>
-        <section id="viewHome">
+        <div class="header-section-second">
+            <a href="#" id="linkHome">Home</a>
+            <a href="#" id="linkRegister">Register</a>
+            <a href="#" id="linkRecipes">Recipes</a>
+            <a href="#" id="linkCreateRecipes">Create Recipe</a>
+            <a href="#" id="linkLogin">Login</a>
+            <a href="#" id="linkLogout">Logout</a>
+        </div>
+        <div class="header-section-third">
+            <span id="usernameBox"></span>
+        </div>
+    </div>
+</header>
+<main>
+    <div class="mainContent"></div>
+    <section id="viewHome">
         <h1>Welcome</h1>
         Welcome to our Food Blog.
-            <p>We love gourmet food, junk food, home-grown, organic, bio and chinese food.</p>
-            <p>Our mission is to show everyone why food is awesome.</p>
-        </section>
-        <section id="viewLogin">
+        <p>We love gourmet food, junk food, home-grown, organic, bio and chinese food.</p>
+        <p>Our mission is to show everyone why food is awesome.</p>
+    </section>
+    <section id="viewLogin">
         <h1>Please login</h1>
         <form class="credentials" id="formLogin">
             <div>Username:</div>
@@ -52,11 +52,11 @@
             <div>Password:</div>
             <div><input type="password" id="loginPass" required/></div>
             <br>
-            <div><input type="submit" value="Login" /></div>
+            <div><input type="submit" value="Login"/></div>
             <span>No account?</span><a href="#" id="linkRegister2">Register here</a>
         </form>
-        </section>
-        <section id="viewRegister">
+    </section>
+    <section id="viewRegister">
         <h1>Please register</h1>
         <form class="credentials" id="formRegister">
             If you want to be part of our awesome community, please register.
@@ -70,31 +70,34 @@
             <div><input type="submit" value="Register"/></div>
             <br>
         </form>
-        </section>
-        <section id="viewRecipes">
-            <h1>All the recipes :</h1>
-            <button type="button" id="buttonReadRecipes">Load Recepies</button>
-        </section>
-        <section id="viewCreateRecipes">
-            <h1>Please enter the recipe name and steps</h1>
-            <form id="formRecipe" method="post">
-                <div>Recipe name:</div>
-                <div><input type="text" id="recipeName" required/></div>
+    </section>
+    <section id="viewRecipes">
+        <h1>All the recipes :</h1>
+        <button type="button" id="buttonReadRecipes">Load Recepies</button>
+    </section>
+    <section id="viewCreateRecipes">
+        <h1>Please enter the recipe name and steps</h1>
+        <form id="formRecipe" method="post">
+            <div>Recipe name:</div>
+            <div><input type="text" id="recipeName" required/></div>
             <br>
             <h1>Please enter the recipe steps: </h1>
             <textarea placeholder="Please fill out the recipe steps here."></textarea>
             <button type="submit" id="buttonSaveRecipe">Save Recipe</button>
-            </form>
-            <br>
-        </section>
-    </main>
-    <footer>
-        <ul class="social-network social-circle">
-                    <li><a href="https://www.facebook.com/SoftwareUniversity" class="icoFacebook" title="Facebook"><i class="fa fa-facebook-official"></i></a></li>
-                    <li><a href="https://twitter.com/softunibg" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
-                    <li><a href="https://plus.google.com/+SoftuniBg" class="icoGoogle" title="Google +"><i class="fa fa-google-plus"></i></a></li>
-                    <li> <p>FoodBlog &copy 2016 Всички права запазени?</p></li>
-            </ul>
-    </footer>
+        </form>
+        <br>
+    </section>
+</main>
+<footer>
+    <ul class="social-network social-circle">
+        <li><a href="https://www.facebook.com/SoftwareUniversity" class="icoFacebook" title="Facebook"><i
+                class="fa fa-facebook-official"></i></a></li>
+        <li><a href="https://twitter.com/softunibg" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a>
+        </li>
+        <li><a href="https://plus.google.com/+SoftuniBg" class="icoGoogle" title="Google +"><i
+                class="fa fa-google-plus"></i></a></li>
+        <li><p>FoodBlog &copy 2016 Всички права запазени?</p></li>
+    </ul>
+</footer>
 </body>
 </html>

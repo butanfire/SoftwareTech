@@ -12,7 +12,7 @@ function createRecipeComment(recipeData, commentText, commentAuthor) {
         commentID: {
             _type: "KinveyRef",
             _id: recipeData._id,
-            _collection: "recipe"
+            _collection: "recipes"
         }
     }
 
@@ -44,15 +44,15 @@ function getRecipeComments() {
         method: "GET",
         url: commentsURL,
         headers: kinveyAuthHeaders,
-        success: getRecipeCommentSuccess,
+        success: RecipesLoaded,
         error: showErrorMsg
     });
 
-
-    function getRecipeCommentSuccess(commentsData) {
-        showInfoMsg("Recipe comments loaded");
-        commentsComing = commentsData;
-    }
+    /*
+     function getRecipeCommentSuccess(commentsData) {
+     showInfoMsg("Recipe comments loaded");
+     commentsComing = commentsData;
+     }*/
 }
 
 function showAddComment(link) { //adding the AddComent and form for the comments

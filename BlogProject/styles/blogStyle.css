@@ -1,60 +1,63 @@
-#infoBox{
+#infoBox {
     background: #393;
 }
-#loadingBox{
+
+#loadingBox {
     background: #7CB3E9;
 }
-#errorBox{
+
+#errorBox {
     background: #F50;
 
 }
-#infoBox,#errorBox,#loadingBox,#usernameBox{
+
+#infoBox, #errorBox, #loadingBox, #usernameBox {
     display: none;
-    color:white;
+    color: white;
     margin: 10px auto;
     padding: 5px;
     border-radius: 5px;
-    font-family: Oswald,sans-serif;
+    font-family: Oswald, sans-serif;
     width: 50%;
     text-align: center;
 }
 
-#usernameBox{
+#usernameBox {
     display: inline;
-    color:black;
+    color: black;
 }
 
-body{
+body {
     font-family: Oswald, sans-serif;
     font-size: 16px;
 }
 
-div{
+div {
     font-size: 20px;
 }
 
-.textarea{
+.textarea {
     display: inline-block;
 }
 
-.mainContent{
+.mainContent {
     background: url("../images/header-new2.png") no-repeat center;
-    margin-top:15px;
+    margin-top: 15px;
     width: 100%;
     height: 250px;
 }
 
-main > section{
-    display:block;
+main > section {
+    display: block;
     margin-left: 8.5%;
 }
 
-section h1{
+section h1 {
     margin: 10px 0px;
     font-size: 1.2em;
 }
 
-.header-section-first{
+.header-section-first {
     display: inline-block;
     width: 90px;
     height: 75px;
@@ -62,29 +65,31 @@ section h1{
     float: left;
     background: url("../images/logo-mini.png") no-repeat;
 }
-.header-section-second{
-    display:inline-block;
+
+.header-section-second {
+    display: inline-block;
     position: static;
 }
-.header-section-third{
+
+.header-section-third {
     display: inline-block;
     float: right;
     margin-top: 10px;
 }
 
-#formRecipe > div, .formComments > div, .credentials > div{
+#formRecipe > div, .formComments > div, .credentials > div {
     display: table-cell;
     vertical-align: middle;
     height: 2em;
 }
 
-#menu{
+#menu {
     text-align: center;
     padding-top: 5px;
     padding-right: 10px;
 }
 
-#menu a{
+#menu a {
     color: black;
     display: inline-block;
     text-decoration: none;
@@ -97,20 +102,20 @@ section h1{
     transition-delay: 0.1s;
 }
 
-#menu a:hover{
+#menu a:hover {
     color: white;
-    background-color:#FFE85C;
+    background-color: #FFE85C;
     font-weight: 500;
     transition: background 0.7s ease, padding 0.5s linear;
 }
 
-#loginPass,#loginUser,#registerUser,#registerPass,#recipeName,#commentText,#commentAuthor{
+#loginPass, #loginUser, #registerUser, #registerPass, #recipeName, #commentText, #commentAuthor {
     margin: 10px;
     padding: 5px;
 }
 
-#buttonLogin,#buttonReadRecipes,#buttonSaveRecipe,.addCommentButton,.formComments,.formRegister, input {
-    border-radius:8px;
+#buttonLogin, #buttonReadRecipes, #buttonSaveRecipe, .addCommentButton, .formComments, .formRegister, input {
+    border-radius: 8px;
     color: black;
     font-size: 0.8em;
     background-color: white;
@@ -126,34 +131,34 @@ section h1{
     padding: 8px 4px 8px 4px;
 }
 
-#buttonLogin,#buttonReadRecipes,#buttonSaveRecipe,input{
+#buttonLogin, #buttonReadRecipes, #buttonSaveRecipe, input {
     font-size: 1.2em;
 }
 
-#buttonRegister:hover,#buttonCreateRecipe:hover,#buttonLogin:hover,#buttonReadRecipes:hover,#buttonSaveRecipe:hover,.addCommentButton:hover,.formComments:hover, input:hover{
+#buttonRegister:hover, #buttonCreateRecipe:hover, #buttonLogin:hover, #buttonReadRecipes:hover, #buttonSaveRecipe:hover, .addCommentButton:hover, .formComments:hover, input:hover {
     color: white;
-    background-color:#3D8F8F;
+    background-color: #3D8F8F;
     transition: background 0.5s ease, padding 0.5s linear;
 }
 
-#linkRegister2{
-    display:inline-block;
+#linkRegister2 {
+    display: inline-block;
     text-decoration: none;
     padding: 5px 10px;
     color: blue;
 }
 
-table th{
+table th {
     background: #9A4600;
     padding: 10px;
 }
 
-table td{
+table td {
     padding: 5px 10px;
     background: #D3BEAC;
 }
 
-footer{
+footer {
     width: 82%;
     text-align: center;
     font-size: 0.8em;

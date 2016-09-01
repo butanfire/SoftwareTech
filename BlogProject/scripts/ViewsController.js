@@ -2,7 +2,7 @@
  * Created by valchevv on 8/30/2016.
  */
 
-$(function(){
+$(function () {
     $('#linkHome').click(showHomeView);
     $("#linkLogin").click(showLoginView);
     $("#linkLogout").click(logout);
@@ -12,32 +12,41 @@ $(function(){
     $("#linkCreateRecipes").click(showCreateRecipeView);
     showHomeView();
     showHideNavigationLink();
-    $("#formLogin").submit(function(e){e.preventDefault(); login();});
-    $("#formRegister").submit(function(e){e.preventDefault(); register();});
-    $("#formRecipe").submit(function(e){e.preventDefault(); saveRecipe()});
-    $("#buttonReadRecipes").click(readAllRecipes);
-    if(localStorage.getItem('user') != undefined) { 
+    $("#formLogin").submit(function (e) {
+        e.preventDefault();
+        login();
+    });
+    $("#formRegister").submit(function (e) {
+        e.preventDefault();
+        register();
+    });
+    $("#formRecipe").submit(function (e) {
+        e.preventDefault();
+        saveRecipe()
+    });
+    $("#buttonReadRecipes").click(getRecipeComments);
+    if (localStorage.getItem('user') != undefined) {
         $("#usernameBox").text("Logged in as : " + localStorage.getItem('user')).show();
     }
     $(document)
         .ajaxStart(function () {
-        $("#loadingBox").text("Loading...").show();
-    })
+            $("#loadingBox").text("Loading...").show();
+        })
         .ajaxStop((function () {
-        $("#loadingBox").hide();
+            $("#loadingBox").hide();
         }));
 });
 
-function showHideNavigationLink(){
+function showHideNavigationLink() {
     let loggedIn = sessionStorage.authToken != null;
-    if(loggedIn){
+    if (loggedIn) {
         $('#linkHome').show();
         $("#linkLogin").hide();
         $("#linkLogout").show();
         $("#linkRecipes").show();
         $("#linkCreateRecipes").show();
     }
-    else{
+    else {
         $('#linkHome').show();
         $("#linkLogin").show();
         $("#linkLogout").hide();
@@ -52,41 +61,40 @@ function showView(viewName) {
     $("#" + viewName).show();
 }
 
-function showCreateRecipeView(){
+function showCreateRecipeView() {
     showView("viewCreateRecipes");
 }
 
-function showHomeView(){
+function showHomeView() {
     showView("viewHome");
 }
 
-function showRecipesView(){
+function showRecipesView() {
     showView("viewRecipes");
 }
 
-function showLoginView(){
+function showLoginView() {
     showView("viewLogin");
     showHideNavigationLink();
 }
 
-function showRegisterView(){
+function showRegisterView() {
     showView("viewRegister");
     showHideNavigationLink();
 }
 
-function showInfoMsg(message){
+function showInfoMsg(message) {
     $("#infoBox").text(message).show().delay(2500).fadeOut();
     $("#loadingBox").hide();
 }
 
-function showErrorMsg(data,status){
+function showErrorMsg(data, status) {
     let errorMsg = '';
-    if(data.responseJSON && data.responseJSON.description){
+    if (data.responseJSON && data.responseJSON.description) {
         errorMsg = data.responseJSON.description
     }
-    else
-    {
-        errorMsg = "Error : "+ JSON.stringify(data);
+    else {
+        errorMsg = "Error : " + JSON.stringify(data);
     }
     $('#errorBox').text(errorMsg).show().delay(2500).fadeOut();
     $('#infoBox').hide();
