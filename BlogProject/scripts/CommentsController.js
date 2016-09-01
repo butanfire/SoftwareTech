@@ -1,7 +1,7 @@
 /**
  * Created by valchevv on 8/30/2016.
  */
-
+var recipeCommented = '';
 function createRecipeComment(recipeData, commentText, commentAuthor) {
     let commentsURL = kinveyServiceBaseURL + "appdata/" + kinveyAppID + "/Comments";
 
@@ -29,13 +29,6 @@ function createRecipeComment(recipeData, commentText, commentAuthor) {
         showInfoMsg("Recipe comment added");
     }
 }
-
-function addComment(link) {
-    let author = $("#commentAuthor").val();
-    let text = $("#commentText").val();
-    createRecipeComment(recipeCommented, text, author);
-    removeCommentFields(link);
-} //a function for sending the data for the comments and removing the comment fields
 
 function getRecipeComments() {
     let commentsURL = kinveyServiceBaseURL + "appdata/" + kinveyAppID + "/Comments/?resolve=commentID";
@@ -65,6 +58,13 @@ function showAddComment(link) { //adding the AddComent and form for the comments
         .append("<div><input type='submit' class='formComments' value='Cancel' onclick='removeCommentFields(this)'/></div>")
         .append("</form>"));
 }
+
+function addComment(link) {
+    let author = $("#commentAuthor").val();
+    let text = $("#commentText").val();
+    createRecipeComment(recipeCommented, text, author);
+    removeCommentFields(link);
+} //a function for sending the data for the comments and removing the comment fields
 
 function removeCommentFields(link) { //removing the comment fields after pressing cancel
     let row = $(link).parent().parent();

@@ -114,7 +114,7 @@ section h1 {
     padding: 5px;
 }
 
-#buttonReadRecipes, #buttonSaveRecipe, .addCommentButton, .formComments,input {
+#buttonReadRecipes, #buttonSaveRecipe, .addCommentButton, .formComments, input {
     border-radius: 8px;
     color: black;
     font-size: 0.8em;
@@ -130,7 +130,6 @@ section h1 {
     transition-delay: 0.1s;
     padding: 8px 4px 8px 4px;
 }
-
 
 #buttonReadRecipes, #buttonSaveRecipe, input {
     font-size: 1em;

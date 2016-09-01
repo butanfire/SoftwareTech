@@ -93,7 +93,8 @@ function showErrorMsg(data, status) {
     if (data.responseJSON && data.responseJSON.description) {
         errorMsg = data.responseJSON.description
     }
-    else {
+    else
+    {
         errorMsg = "Error : " + JSON.stringify(data);
     }
     $('#errorBox').text(errorMsg).show().delay(2500).fadeOut();

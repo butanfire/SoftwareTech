@@ -63,20 +63,24 @@ tinymce.init({
  error: showErrorMsg
  });
  }*/
+
 function RecipesLoaded(commentsComing) {
-    $("#viewRecipes").text(' ').append("<button type='button' id='buttonReadRecipes' onclick='readAllRecipes()'>Load Recepies</button>"); //clearing the recipes and adding the button
-    outputStructure = $('<table>') //adding the table structure for the recipes
-        .append($('<tr>').append(
-            '<th>Recipe name</th>',
-            '<th>Author</th>',
-            '<th>Recipe Text</th>')
-        );
+    $("#viewRecipes").text(' ');
+    $("#viewRecipes").append("<button type='button' id='buttonReadRecipes' onclick='getRecipeComments()'>Load Recepies</button>"); //clearing the recipes and adding the button
+
+    outputStructure = $('<table>'); //adding the table structure for the recipes
 
     for (let recipe of commentsComing) {
+        recipeCommented = recipe;
+
         let recipeName = recipe.commentID._obj.recipeName;
         let recipeAuthor = recipe.commentID._obj.author;
         let recipeText = recipe.commentID._obj.recipeText;
-        outputStructure.append($('<tr>').append(  //adding each recipe to the table
+        outputStructure .append($('<tr>').append(
+            '<th>Recipe name</th>',
+            '<th>Author</th>',
+            '<th>Recipe Text</th>')
+        ).append($('<tr>').append(  //adding each recipe to the table
             $('<td>').text(recipeName),
             $('<td>').text(recipeAuthor),
             $('<td>').append(recipeText)));

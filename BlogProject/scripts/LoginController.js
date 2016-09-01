@@ -1,17 +1,17 @@
 /**
  * Created by valchevv on 8/30/2016.
  */
-function register(){
+function register() {
     let registerURL = kinveyServiceBaseURL + "user/" + kinveyAppID + "/";
 
     let userData = {
         username: $("#registerUser").val(),
         password: $("#registerPass").val()
     };
-    if(userData.username.length < 5) {
+    if (userData.username.length < 5) {
         showErrorMsg("Username is less than 5 characters")
     }
-    else{
+    else {
         if (userData.password.length < 5) {
             showErrorMsg("Password is less than 5 characters")
         }
@@ -27,9 +27,9 @@ function register(){
         }
     }
 
-    function registerSuccess(response){
+    function registerSuccess(response) {
         let userAuth = response._kmd.authtoken;
-        sessionStorage.setItem('authToken',userAuth);
+        sessionStorage.setItem('authToken', userAuth);
         showHomeView();
         showHideNavigationLink();
         showInfoMsg("Register Successful");
@@ -37,14 +37,14 @@ function register(){
     }
 }
 
-function login(){
+function login() {
     let loginURL = kinveyServiceBaseURL + "user/" + kinveyAppID + "/login";
 
     let userData = {
         username: $("#loginUser").val(),
         password: $("#loginPass").val()
     };
-    if(userData.username.length < 5) {
+    if (userData.username.length < 5) {
         showErrorMsg("Username is less than 5 characters")
     }
     else {
@@ -63,9 +63,9 @@ function login(){
         }
     }
 
-    function loginSuccess(response){
+    function loginSuccess(response) {
         let userAuth = response._kmd.authtoken;
-        sessionStorage.setItem('authToken',userAuth);
+        sessionStorage.setItem('authToken', userAuth);
         showHomeView();
         showHideNavigationLink();
         showInfoMsg("Login Successful");
@@ -73,17 +73,17 @@ function login(){
     }
 }
 
-function showLoggedUser(response){
-    var user = {'name':response.username};
-    $("#usernameBox").text("Logged in as : "+ user.name).show();
+function showLoggedUser(response) {
+    var user = {'name': response.username};
+    $("#usernameBox").text("Logged in as : " + user.name).show();
     localStorage.setItem('user', user.name);
 }
 
-function hideLoggedUser(){
+function hideLoggedUser() {
     $("#usernameBox").hide();
 }
 
-function logout(){
+function logout() {
     sessionStorage.clear();
     localStorage.clear();
     showHideNavigationLink();
