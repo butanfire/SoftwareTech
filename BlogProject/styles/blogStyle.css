@@ -43,7 +43,8 @@ div {
 .mainContent {
     background: url("../images/header-new2.png") no-repeat center;
     margin-top: 15px;
-    width: 100%;
+    width: 85%;
+    margin-left: 8%;
     height: 250px;
 }
 
